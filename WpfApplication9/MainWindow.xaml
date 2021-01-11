@@ -1,0 +1,326 @@
+﻿<Window x:Class="WpfApplication9.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplication9"
+        mc:Ignorable="d"
+        Title="MainWindow" Width="1024" Height="760">
+
+
+    <Grid Width="1024" Height="730" Background="#FEF2E4">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+
+
+
+        <StackPanel Orientation="Horizontal" Background="#E8FFF2">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="Auto" Height="Auto" Content="Class :" FontSize="20" FontFamily="Roboto" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold"/>
+                    <Label x:Name="labclass" Content="4 ," Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontFamily="Roboto"  FontWeight="Bold"/>
+                    <Label Width="Auto" Height="Auto" Content="Section :" FontSize="20" FontFamily="Roboto" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold"/>
+                    <Label x:Name="labsection" Content="B" Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontFamily="Roboto"  FontWeight="Bold"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="Auto" Height="Auto" Content="Total Marks :" FontSize="20" FontFamily="Roboto" HorizontalAlignment="Left" VerticalAlignment="Center" FontWeight="Bold"/>
+                    <Label x:Name="labmark" Content="10" Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontFamily="Roboto"  FontWeight="Bold"/>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="140 0 0 0" >
+                <Grid>
+                    <StackPanel Orientation="Horizontal" Visibility="Visible">
+                        <TextBlock Text="Dictation Test"  HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" FontFamily="Roboto" FontWeight="Bold" />
+                        <Label Width="auto" Height="auto" Content="(" FontSize="28" FontFamily="Roboto" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#f77604"/>
+                        <Label Width="auto" Height="auto" Content="0" FontSize="25" FontFamily="Roboto" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#f77604" x:Name="LabCountText" />
+                        <Label Width="auto" Height="auto" Content="/" FontSize="25" FontFamily="Roboto" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#f77604" Margin="0,12,0,0"/>
+                        <Label Width="auto" Height="auto" Content="10" FontSize="25" FontFamily="Roboto" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#f77604" />
+                        <Label Width="auto" Height="auto" Content=")" FontSize="25" FontFamily="Roboto" FontWeight="Bold"  HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#f77604" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"   Visibility="Hidden">
+                        <TextBlock Text="Dictation Test Result"  HorizontalAlignment="Center" Margin="20 5 0 0" VerticalAlignment="Center" FontSize="25" FontFamily="Roboto" FontWeight="Bold" />
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="130,0,0,0" >
+                <!--<Image Source="Check.png" HorizontalAlignment="Center"  Height="55" Width="55"  Margin="0 0 0 0"  Panel.ZIndex="1">
+                    <Image.Clip>
+                        <EllipseGeometry RadiusX="50" RadiusY="55"  Center="45,45"/>
+
+                    </Image.Clip>
+                </Image>-->
+                <Ellipse Width="55" Height="55" HorizontalAlignment="Center" Margin="-10,5,0,5">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="images.jpg"/>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <StackPanel>
+                    <TextBlock Height="25" Width="Auto" FontSize="18" FontFamily="Roboto" FontWeight="Bold" Text=" Mr.Rajkumar prakasam " VerticalAlignment="Center" TextAlignment="Center" Margin="0 5 0 0"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Height="30" Width="Auto" FontSize="18" FontFamily="Roboto" FontWeight="Bold" Text="Roll No:" VerticalAlignment="Center" TextAlignment="Center"  Margin="5 7 0 0"/>
+                        <Label Content="123456789" x:Name="labsub" Width="Auto" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontFamily="Roboto"  FontWeight="Bold" />
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Vertical" >
+            <StackPanel >
+                <Grid>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 20 0 30" x:Name="listen">
+
+                        <TextBlock Width="Auto" Height="Auto" Text="Listen and Answer :" FontSize="25" FontFamily="Roboto" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        <TextBox x:Name="txtsearch"  Height="50" Width="400"   FontSize="25" FontFamily="Roboto"  FontWeight="Bold"   Margin="10 0 0 0"/>
+                        <StackPanel>
+                            <Grid>
+                            <Button x:Name="voice" Click="voice_Click" HorizontalAlignment="Center"  Height="50" Width="50" Margin="-60 0 0 0">
+                                <Image Source="Sound (1).png" HorizontalAlignment="Center"  Height="40" Width="40"  Margin="0 0 0 0"  Panel.ZIndex="1"/>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="Border" CornerRadius="25,25,25,25" BorderThickness="2" Background="Transparent" BorderBrush="Transparent" >
+                                            <!--<Border.Effect>
+                                            <DropShadowEffect />
+                                        </Border.Effect>-->
+                                            <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                                <Setter TargetName="Border" Property="Background" Value="#FFC7F1F7"  />
+
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                                <!--<Setter TargetName="Border" Property="Background" Value="#f56c57" />-->
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="true">
+                                                <Setter TargetName="Border" Property="Background" Value="#FFEED3BC" />
+                                                <Setter TargetName="Border" Property="BorderBrush" Value="#FF73E2EE" />
+                                            </Trigger>
+
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+
+
+                            </Button>
+
+                                <Button x:Name="voiceDup" Click="voice_Click" HorizontalAlignment="Center"  Height="50" Width="50" Margin="-60 0 0 0" Visibility="Hidden">
+                                    <Image Source="Sound (1).png" HorizontalAlignment="Center"  Height="40" Width="40"  Margin="0 0 0 0"  Panel.ZIndex="1"/>
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border x:Name="Border" CornerRadius="25,25,25,25" BorderThickness="2" Background="Transparent" BorderBrush="Transparent"  Visibility="Hidden">
+                                                <!--<Border.Effect>
+                                            <DropShadowEffect />
+                                        </Border.Effect>-->
+                                                <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsKeyboardFocused" Value="true">
+                                                    <Setter TargetName="Border" Property="Background" Value="#FF99F9F9"  />
+
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="Border" Property="Background" Value="#FF99F9F9" />
+                                                </Trigger>
+                                                <Trigger Property="IsPressed" Value="true">
+                                                    <!--<Setter TargetName="Border" Property="Background" Value="#FF99F9F9" />-->
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#FF99F9F9" />
+                                                </Trigger>
+
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Button.Template>
+
+
+                                </Button>
+                            </Grid>
+                        </StackPanel>
+                        <StackPanel>
+                            <Grid Height="Auto" Width="Auto">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Button   Background="Transparent" Height="54" Margin="55,0,65,0" Padding="0,0,0,0" BorderBrush="Beige" Content="Next" FontSize="28" Foreground="White" FontFamily="Roboto" FontWeight="Bold" x:Name="NextQues" Click="NextQues_Click" Grid.RowSpan="2">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border x:Name="Border" CornerRadius="8,8,8,8" BorderThickness="2" Background="#f77604" BorderBrush="#f77604" >
+                                                <!--<Border.Effect>
+                                            <DropShadowEffect />
+                                        </Border.Effect>-->
+                                                <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsKeyboardFocused" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#f56c57" />
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="Border" Property="Background" Value="#f56c57" />
+                                                </Trigger>
+                                                <Trigger Property="IsPressed" Value="true">
+                                                    <Setter TargetName="Border" Property="Background" Value="#f56c57" />
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#f77604" />
+                                                </Trigger>
+
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+
+                                <Button  x:Name="SubmitTest"  Background="Transparent" Width="222" Height="54" Margin="20,0,0,0" Padding="0,0,0,0" BorderBrush="Beige" Content="Submit Test" FontSize="28" Foreground="White" FontFamily="Roboto" FontWeight="Bold" Visibility="Hidden" Click="SubmitTest_Click" Grid.RowSpan="2">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border x:Name="Border" CornerRadius="8,8,8,8" BorderThickness="2" Background="#f77604" BorderBrush="#f77604" >
+                                                <!--<Border.Effect>
+                                            <DropShadowEffect />
+                                        </Border.Effect>-->
+                                                <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsKeyboardFocused" Value="true">
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#f56c57" />
+                                                </Trigger>
+                                                <Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="Border" Property="Background" Value="#f56c57" />
+                                                </Trigger>
+                                                <Trigger Property="IsPressed" Value="true">
+                                                    <Setter TargetName="Border" Property="Background" Value="#f56c57" />
+                                                    <Setter TargetName="Border" Property="BorderBrush" Value="#f77604" />
+                                                </Trigger>
+
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel x:Name="mark" Visibility="Hidden">
+                        <Button x:Name="Markverify" Click="Markverify_Click" Height="60" Width="670"  HorizontalAlignment="Center"  Margin="0,30,0,30"
+					VerticalAlignment="Center"  FontSize="20" FontFamily="Roboto"  FontWeight="Bold" Foreground="White" >
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border x:Name="Border" CornerRadius="8,8,8,8" BorderThickness="2" Background="#f77604" BorderBrush="#f77604" >
+                                        <Border.Effect>
+                                            <DropShadowEffect />
+                                        </Border.Effect>
+                                        <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsKeyboardFocused" Value="true">
+                                            <Setter TargetName="Border" Property="BorderBrush" Value="#f56c57" />
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="true">
+                                            <Setter TargetName="Border" Property="Background" Value="#f56c57" />
+                                        </Trigger>
+                                        <Trigger Property="IsPressed" Value="true">
+                                            <Setter TargetName="Border" Property="Background" Value="#FFFB4529" />
+                                            <Setter TargetName="Border" Property="BorderBrush" Value="#FFE03D0D" />
+                                        </Trigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Button.Template>
+                            <StackPanel Orientation="Horizontal">
+                                <Label  Content="Marks :"  FontSize="20" FontFamily="Roboto"  FontWeight="Bold" Foreground="White"/>
+                                <Label x:Name="labTestMark" Content="7"  FontSize="20" FontFamily="Roboto"  FontWeight="Bold" Foreground="White" Margin="-5 0 0 0"/>
+                                <Label x:Name="labTestTotMark" Content=" / 10"  FontSize="20" FontFamily="Roboto"  FontWeight="Bold" Foreground="White" Margin="-5 0 0 0"/>
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical" >
+                <StackPanel Height="auto" Width="970"  Background="White">
+                    <TextBlock Text="Dictation Words" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="25" FontFamily="Roboto" FontWeight="Bold" Margin="0,20,0,0"/>
+
+
+                    <ListView x:Name="list"  Width="970" Height="450" Margin="0 0 0 0" 
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="sub_SelectionChanged" BorderThickness="0"  >
+                     
+
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <!--<StackPanel Orientation="Vertical">-->
+                                <WrapPanel Orientation="Vertical" Height="350" >
+
+                                </WrapPanel>
+                                <!--</StackPanel>-->
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal" Margin="30 10 0 0">
+                                    <TextBlock Width="30" Height="40" Text="{Binding num}" FontSize="25" FontFamily="Roboto" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" />
+                                    <TextBlock Width="170" Height="40" Text="{Binding name}" FontSize="25" FontFamily="Roboto" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0" />
+                                    <Ellipse Height="40" Width="40"  Margin="0 0 0 0"  Panel.ZIndex="1" Visibility="Hidden">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="View.png" Stretch="Fill"></ImageBrush>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+                                    <Ellipse x:Name="Wrongpic" Height="40" Width="40"  Margin="7 0 0 0"  Panel.ZIndex="1" Visibility="Hidden">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="Wrong.png" Stretch="Fill"></ImageBrush>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+
+                                    <Ellipse Height="40" Width="40"  Margin="-49 0 0 0"  Panel.ZIndex="1" Visibility="Hidden">
+                                        <Ellipse.Fill>
+                                            <ImageBrush ImageSource="Check.png" Stretch="Fill"></ImageBrush>
+                                        </Ellipse.Fill>
+                                    </Ellipse>
+
+                                    <Button Background="Transparent" Width="54" Height="54" Margin="20,0,0,0" Padding="-5,0,0,0" BorderBrush="Beige">
+                                        <Image Source="Sound (1).png" Width="45" Height="45" />
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="{x:Type Button}">
+                                                <Border x:Name="Border" CornerRadius="25,25,25,25" BorderThickness="2" Background="Transparent" BorderBrush="Transparent" >
+                                                    <!--<Border.Effect>
+                                                        <DropShadowEffect />
+                                                    </Border.Effect>-->
+                                                    <ContentPresenter Margin="2" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsKeyboardFocused" Value="true">
+                                                        <Setter TargetName="Border" Property="BorderBrush" Value="#f56c57" />
+                                                        <Setter TargetName="Border" Property="Background" Value="#f56c57" />
+                                                    </Trigger>
+                                                    <Trigger Property="IsMouseOver" Value="true">
+                                                        <Setter TargetName="Border" Property="Background" Value="#f56c57" />
+                                                    </Trigger>
+                                                    <Trigger Property="IsPressed" Value="true">
+                                                        <Setter TargetName="Border" Property="Background" Value="#FFFB4529" />
+                                                        <Setter TargetName="Border" Property="BorderBrush" Value="#FFE03D0D" />
+                                                    </Trigger>
+
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                    <StackPanel Orientation="Horizontal" Visibility="Hidden">
+                                        <Label Width="Auto" Height="Auto" Content="2" Margin="0 10 0 0 " Foreground="#F56C57" FontSize="20" FontFamily="Roboto" FontWeight="Bold" />
+                                        <Label Width="Auto" Height="Auto" Content="/" Margin="0 10 0 0 " Foreground="#F56C57" FontSize="20" FontFamily="Roboto" FontWeight="Bold" />
+                                        <Label Width="Auto" Height="Auto" Content="40s" Margin="0 10 0 0 " Foreground="#F56C57" FontSize="20" FontFamily="Roboto" FontWeight="Bold" />
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+
+    </Grid>
+</Window>
